@@ -11,12 +11,12 @@ class MinerFarm:
             self.lvl_up = lvl_up
 
     class Elevator:
-        def __init__(self, human, lvl_up):
+        def __init__(self, human, manager, lvl_up):
             self.human = human
             self.lvl_up = lvl_up
 
     class Transporter:
-        def __init__(self, human, lvl_up):
+        def __init__(self, human, manager, lvl_up):
             self.human = human
             self.lvl_up = lvl_up
 
@@ -34,8 +34,8 @@ class MinerFarm:
             self.lvl_down = lvl_down
 
 mine = MinerFarm.Mine(human=(2710, 649),lvl_up=(2910, 630))
-elevator = MinerFarm.Elevator(human=(2498, 505),lvl_up=(2500, 290))
-transporter = MinerFarm.Transporter(human=(2866, 410),lvl_up=(2915, 304))
+elevator = MinerFarm.Elevator(human=(2498, 505),lvl_up=(2500, 290), manager=(2498, 353))
+transporter = MinerFarm.Transporter(human=(2866, 410),lvl_up=(2915, 304),manager=(2921, 369))
 button_upgrade = MinerFarm.Lvl_up_btn(lvl_up=(2802, 530), close=(2883, 249))
 level_view_up = MinerFarm.View_level_up(lvl_up=(2247, 233))
 level_view_down = MinerFarm.View_level_down(lvl_down=(2247, 328))
@@ -75,13 +75,13 @@ def elevator_upgrade():
 
 def view_level_up():
     print("gowing up")
-    for i in range(0,4):
+    for i in range(0,1):
         pyautogui.click(level_view_up.lvl_up)
         time.sleep(0.5)
 
 def view_level_down():
     print("going down")
-    for i in range(0,4):
+    for i in range(0,1):
         pyautogui.click(level_view_down.lvl_down)
         time.sleep(0.5)
 
